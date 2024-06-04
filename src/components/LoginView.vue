@@ -3,7 +3,7 @@
     <div class="login_box">
       <!-- 头像区域 -->
       <div class="avatar_box">
-        <img src="../assets/logo.png" alt="" />
+        <img src="../assets/login.png" alt="" />
       </div>
       <!-- 登录表单区 -->
       <el-form
@@ -17,7 +17,7 @@
         <el-form-item prop="username">
           <el-input
             v-model="loginForm.username"
-            prefix-icon="iconfont icon-people"
+            prefix-icon="iconfont icon-user"
           ></el-input>
         </el-form-item>
         <!-- 密码 -->
@@ -25,7 +25,7 @@
           <el-input
             v-model="loginForm.password"
             type="password"
-            prefix-icon="iconfont icon-mima"
+            prefix-icon="iconfont icon-lock_fill"
           ></el-input>
         </el-form-item>
         <el-form-item class="btns">
