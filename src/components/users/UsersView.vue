@@ -67,6 +67,7 @@
                 type="warning"
                 icon="el-icon-setting"
                 size="mini"
+                @click="showEditRoleDialog(scope.row)"
               ></el-button>
             </el-tooltip>
           </template>
@@ -143,6 +144,37 @@
       <span slot="footer" class="dialog-footer">
         <el-button @click="editDialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="editUser">确 定</el-button>
+      </span>
+    </el-dialog>
+
+    <!-- 修改角色对话框 -->
+    <el-dialog
+      title="修改角色"
+      :visible.sync="editRoleDialogVisible"
+      width="50%"
+      @close="checkedId = null"
+    >
+      <el-form :model="userInfo" label-width="100px">
+        <el-form-item label="当前的用户:">
+          {{ userInfo.username }}
+        </el-form-item>
+        <el-form-item label="当前的角色:">
+          {{ userInfo.role_name }}
+        </el-form-item>
+        <el-form-item label="分配新角色:">
+          <el-select v-model="checkedId" placeholder="请选择">
+            <el-option
+              v-for="item in roles"
+              :key="item.id"
+              :label="item.roleName"
+              :value="item.id"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="editRoleDialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="editRole()">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -234,11 +266,17 @@ export default {
           { required: true, message: '请输入手机号', trigger: 'blur' },
           { validator: checkMobile, trigger: 'blur' }
         ]
-      }
+      },
+      // 控制修改角色对话框的显示与隐藏
+      editRoleDialogVisible: false,
+      userInfo: {},
+      roles: [],
+      checkedId: null
     }
   },
   created() {
     this.getUserList()
+    this.getRoles()
   },
   methods: {
     async getUserList() {
@@ -312,7 +350,7 @@ export default {
     async deleteUser(id) {
       // 弹框询问用户是否删除
       const comfirmResult = await this.$messageBox
-        .confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        .confirm('确认删除？', '提示', {
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
@@ -330,6 +368,30 @@ export default {
     // 关闭编辑用户对话框
     editDialogClosed() {
       this.$refs.editFormRef.resetFields()
+    },
+    // 打开修改角色对话框
+    showEditRoleDialog(userInfo) {
+      this.userInfo = userInfo
+      this.editRoleDialogVisible = true
+    },
+    async getRoles() {
+      const { data: res } = await this.$http.get('/roles')
+      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+      this.$message.success('获取角色列表成功')
+      this.roles = res.data
+    },
+    // 提交修改角色
+    async editRole() {
+      if (!this.checkedId) return this.$message.info('请选择新角色')
+      const { data: res } = await this.$http.put(
+        `/users/${this.userInfo.id}/role`,
+        { rid: this.checkedId }
+      )
+      if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
+      // 修改角色成功
+      this.editRoleDialogVisible = false
+      this.getUserList()
+      this.$message.success('修改角色成功')
     }
   }
 }

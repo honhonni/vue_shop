@@ -104,8 +104,13 @@ export default {
     background-color: #3f3d41;
     display: flex;
     justify-content: space-between;
-
     align-items: center;
+    z-index: 999;
+  }
+  .el-container {
+    position: absolute;
+    padding-top: 60px;
+    width: 100%;
   }
   .el-aside {
     background-color: #333744;
@@ -127,6 +132,7 @@ export default {
   }
   .el-main {
     background-color: #eee;
+    height: 100%;
   }
 }
 </style>

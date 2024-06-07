@@ -18,13 +18,17 @@ import {
   MenuItem,
   Message,
   MessageBox,
+  Option,
   Pagination,
   Row,
+  Select,
   Submenu,
   Switch,
   Table,
   TableColumn,
-  Tooltip
+  Tag,
+  Tooltip,
+  Tree
 } from 'element-ui'
 
 const coms = [
@@ -43,13 +47,17 @@ const coms = [
   Main,
   Menu,
   MenuItem,
+  Option,
   Pagination,
   Row,
+  Select,
   Submenu,
   Switch,
   Table,
   TableColumn,
-  Tooltip
+  Tag,
+  Tooltip,
+  Tree
 ]
 
 // 导入弹框提示组件

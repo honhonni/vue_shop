@@ -86,7 +86,8 @@ module.exports = {
     // "no-multi-spaces": 1, // 不能用多余的空格
 
     'space-before-function-paren': 0, // 函数小括号前
-    'no-magic-numbers': ['error', { ignore: [200, 201] }] // 忽略魔法数字 200
+    // 'no-magic-numbers': ['error', { ignore: [200, 201] }] // 忽略魔法数字 200
+    'no-magic-numbers': 0
     // 'no-duplicate-imports': 0 // 不允许重复导入
   }
 }
