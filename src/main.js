@@ -16,6 +16,12 @@ import './assets/css/global.css'
 // 导入axios
 import axios from 'axios'
 
+// 导入树形表格
+import TreeTable from 'vue-table-with-tree-grid'
+
+// 注册树形表格
+Vue.component('tree-table', TreeTable)
+
 // 使用 element 组件
 Vue.use(element)
 

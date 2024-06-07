@@ -28,7 +28,8 @@ import {
   TableColumn,
   Tag,
   Tooltip,
-  Tree
+  Tree,
+  Cascader
 } from 'element-ui'
 
 const coms = [
@@ -57,7 +58,8 @@ const coms = [
   TableColumn,
   Tag,
   Tooltip,
-  Tree
+  Tree,
+  Cascader
 ]
 
 // 导入弹框提示组件
