@@ -22,3 +22,11 @@ body,
   margin-top: 20px;
   font-size: 12px;
 }
+
+.el-steps {
+  margin: 20px 0;
+}
+
+.ql-editor {
+  min-height: 300px;
+}

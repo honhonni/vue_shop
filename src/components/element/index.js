@@ -7,6 +7,9 @@ import {
   BreadcrumbItem,
   Button,
   Card,
+  Cascader,
+  Checkbox,
+  CheckboxGroup,
   Col,
   Container,
   Dialog,
@@ -23,6 +26,8 @@ import {
   Pagination,
   Row,
   Select,
+  Step,
+  Steps,
   Submenu,
   Switch,
   Table,
@@ -32,7 +37,7 @@ import {
   Tag,
   Tooltip,
   Tree,
-  Cascader
+  Upload
 } from 'element-ui'
 
 const coms = [
@@ -42,6 +47,9 @@ const coms = [
   BreadcrumbItem,
   Button,
   Card,
+  Cascader,
+  Checkbox,
+  CheckboxGroup,
   Col,
   Container,
   Dialog,
@@ -56,6 +64,8 @@ const coms = [
   Pagination,
   Row,
   Select,
+  Step,
+  Steps,
   Submenu,
   Switch,
   Table,
@@ -65,7 +75,7 @@ const coms = [
   Tag,
   Tooltip,
   Tree,
-  Cascader
+  Upload
 ]
 
 // 导入弹框提示组件
