@@ -1,6 +1,7 @@
 import Vue from 'vue'
 
 import {
+  Alert,
   Aside,
   Breadcrumb,
   BreadcrumbItem,
@@ -26,6 +27,8 @@ import {
   Switch,
   Table,
   TableColumn,
+  TabPane,
+  Tabs,
   Tag,
   Tooltip,
   Tree,
@@ -33,6 +36,7 @@ import {
 } from 'element-ui'
 
 const coms = [
+  Alert,
   Aside,
   Breadcrumb,
   BreadcrumbItem,
@@ -56,6 +60,8 @@ const coms = [
   Switch,
   Table,
   TableColumn,
+  TabPane,
+  Tabs,
   Tag,
   Tooltip,
   Tree,
