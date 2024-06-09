@@ -35,6 +35,8 @@ import {
   TabPane,
   Tabs,
   Tag,
+  Timeline,
+  TimelineItem,
   Tooltip,
   Tree,
   Upload
@@ -73,6 +75,8 @@ const coms = [
   TabPane,
   Tabs,
   Tag,
+  Timeline,
+  TimelineItem,
   Tooltip,
   Tree,
   Upload
